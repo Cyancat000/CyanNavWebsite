@@ -1,0 +1,23 @@
+{
+  "name": "cyannavwebsite",
+  "version": "1.0.0",
+  "description": "一个基于Node.js的轻量导航网站",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cyancat000/CyanNavWebsite.git"
+  },
+  "author": "CyanCat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cyancat000/CyanNavWebsite/issues"
+  },
+  "homepage": "https://github.com/Cyancat000/CyanNavWebsite#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
