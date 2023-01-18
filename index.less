@@ -30,15 +30,29 @@ body {
         padding-top: 25px;
         overflow: scroll;
         >div {
-            display: flex;
+            display: none;
             flex-wrap: wrap;
+            &.active{
+                display: flex;
+            }
             a {
                 text-decoration: unset;
                 color: #333;
-                width: 200px;
+                padding: 10px 20px;
+                height: 50px;
+                color: #fff;
+                border-radius: 25px;
                 font-size: 28px;
+                line-height: 50px;
                 text-align: center;
-                line-height: 150px;
+                margin: 10px 15px;
+                background: #08a;
+                overflow: auto;
+                box-shadow:0px 3px 10px 0px #3333;
+                transition: all 0.5s;
+                &:hover{
+                    transform: scale(1.1);
+                }
             }
         }
     }

@@ -12,13 +12,23 @@ function getAll(node){
 
 //渲染页面
 function render(){
+    let list = get('.list')
     axios.post('/json/get', {
         path: 'json/index.json'
     }).then(res=>{
         let data = res.data
         for(var key in data){
-            console.log(data[key], key);
+            let box = document.createElement('div')
+            box.className=key
+            list.appendChild(box)
+            data[key].forEach(i=>{
+                let link = document.createElement('a')
+                link.innerHTML=i[0]
+                link.href=i[1]
+                box.appendChild(link)
+            })
         }
+        getAll('.list > div')[0].classList.add('active')
     })
 }
 
@@ -43,13 +53,14 @@ function sort() {
 }
 
 //绑定下方栏点击事件
-getAll(".tab span").forEach(node=>{
+getAll(".tab span").forEach((node,index)=>{
     node.onclick=function(){
         get('.tab .active').className=''
+        get('.list .active').classList.remove('active')
+        getAll('.list > div')[index].classList.add('active')
         this.className='active'
     }
 })
 
-
-// render()
+render()
 // axios.post('/json/sort')
